@@ -78,32 +78,23 @@ body {
     background-color: #ffffff;
 }
 
-/* Hero Section Container */
+/* Hero Section Container with Background Image */
 .hero {
     position: relative;
-    height: 85vh; /* Takes up 85% of the screen height */
+    height: 85vh;
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    overflow: hidden; /* Keeps the video completely inside the box */
+    background-image: url('../images/HERO-IMAGE.jpeg'); /* Links right to your image folder */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     color: #ffffff;
 }
 
-/* Background Video Setup */
-.hero-video {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    min-width: 100%;
-    min-height: 100%;
-    width: auto;
-    height: auto;
-    transform: translate(-50%, -50%);
-    object-fit: cover;
-    z-index: 1;
-}
+
 
 /* Dark Overlay Tint */
 .hero-overlay {
