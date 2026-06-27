@@ -97,7 +97,7 @@
             transform: translateY(-2px);
         }
 
-        /* --- HERO SECTION WITH VIDEO & VISUAL FALLBACK --- */
+        /* --- HERO SECTION WITH VIDEO --- */
         .hero {
             position: relative;
             height: 100vh;
@@ -107,8 +107,7 @@
             text-align: center;
             color: var(--white);
             overflow: hidden;
-            /* Scenic Luxury Greenery & Travel Fallback Background if mobile blocks video stream */
-            background: url('https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
+            background-color: var(--dark-blue);
         }
 
         .hero-video {
@@ -278,11 +277,45 @@
 
         /* --- ABOUT & CONTACT STYLING --- */
         .about-text {
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
             text-align: center;
             font-size: 1.1rem;
             color: #444;
+            line-height: 1.8;
+        }
+
+        .exec-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            width: 100%;
+            max-width: 900px;
+            margin: 40px auto 0;
+        }
+
+        .exec-card {
+            background-color: var(--white);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 6px;
+            padding: 20px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+        }
+
+        .exec-role {
+            font-family: 'Cinzel', serif;
+            color: var(--gold);
+            font-size: 1.1rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+        }
+
+        .exec-name {
+            font-size: 1.3rem;
+            color: var(--dark-blue);
+            font-weight: 600;
+            margin-bottom: 15px;
         }
 
         .contact-container {
@@ -302,6 +335,46 @@
 
         .contact-info-link:hover {
             color: var(--gold);
+        }
+
+        /* --- SOCIAL MEDIA GRID --- */
+        .social-showcase {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            max-width: 500px;
+            margin: 30px auto 10px;
+        }
+
+        @media(max-width: 500px) {
+            .social-showcase {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        .social-link-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background-color: rgba(255,255,255,0.05);
+            padding: 10px 15px;
+            border-radius: 4px;
+            color: var(--white);
+            text-decoration: none;
+            font-size: 13px;
+            border: 1px solid rgba(212,175,55,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .social-link-item:hover {
+            background-color: var(--gold);
+            color: var(--dark-blue);
+            border-color: var(--gold);
+            transform: translateY(-2px);
+        }
+
+        .social-link-item i {
+            font-size: 16px;
         }
 
         /* --- FLOATING WHATSAPP BUTTON --- */
@@ -334,7 +407,7 @@
             background-color: var(--dark-blue);
             color: var(--white);
             text-align: center;
-            padding: 30px 20px;
+            padding: 40px 20px 30px;
             border-top: 3px solid var(--gold);
             font-size: 14px;
         }
@@ -394,11 +467,11 @@
         </div>
     </header>
 
-    <!-- HERO SECTION WITH PRESET TRAVEL MEDIA CHANNELS -->
+    <!-- HERO SECTION WITH COMPATIBLE LIVE BACKGROUND VIDEO -->
     <main id="home" class="hero">
-        <!-- Plays custom seamless loop, pre-configured with background parameters to force autoplay -->
-        <video class="hero-video" autoplay loop muted playsinline poster="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=1920&q=80">
-            <source src="https://assets.mixkit.co/videos/preview/mixkit-gondolas-parked-on-a-canal-in-venice-41611-large.mp4" type="video/mp4">
+        <!-- High-speed luxury travel video infrastructure with bypass properties to force loop execution on iOS & Android -->
+        <video class="hero-video" autoplay loop muted playsinline webkit-playsinline preload="auto">
+            <source src="https://player.vimeo.com/external/435674703.hd.mp4?s=6f436e22bc21c614da65952f447cf087e5944123&profile_id=174&oauth2_token_id=57447761" type="video/mp4">
         </video>
         <div class="hero-overlay"></div>
         <div class="hero-content">
@@ -412,7 +485,7 @@
         </div>
     </main>
 
-    <!-- LUXURY UMRAH PACKAGES SECTION WITH MAKKAH & MADINAH ARTWORK -->
+    <!-- LUXURY UMRAH PACKAGES SECTION -->
     <section id="umrah">
         <h2 class="section-title">Exclusive Umrah Packages</h2>
         <div class="grid-container">
@@ -435,7 +508,7 @@
         </div>
     </section>
 
-    <!-- WORLDWIDE TOURS SECTION WITH BEAUTIFUL GREENERY & SCENIC ROADWAYS -->
+    <!-- WORLDWIDE TOURS SECTION -->
     <section id="tours">
         <h2 class="section-title">Worldwide Destinations</h2>
         <div class="grid-container">
@@ -458,11 +531,39 @@
         </div>
     </section>
 
-    <!-- ABOUT SECTION -->
+    <!-- ABOUT SECTION WITH UPDATED EXECUTIVE CORPORATE CONTENT -->
     <section id="about" style="background-color: var(--white); border-radius: 12px; margin-bottom: 60px;">
         <h2 class="section-title">About Ambaria Global Travels</h2>
         <div class="about-text">
-            <p>Welcome to Ambaria Global Travels, where your journey begins with trust and ends with excellence. We set the royal standard of travel, delivering bespoke, premium experiences for pilgrims and global explorers alike. Whether you are embarking on a sacred Umrah journey or seeking to discover world-class international destinations, our dedicated experts handle every single detail with flawless precision.</p>
+            <p>Welcome to Ambaria Global Travels, where our name embodies the very essence of luxury travel and your journey is elevated to an art form. Operating with executive management based in Europe alongside our dedicated operations in Pakistan, we bridge world-class European standards of hospitality with deep local expertise to curate truly unforgettable worldwide destinations. We understand that true luxury lies in flawless peace of mind, which is why our team is at your service 24/7 providing round-the-clock, real-time assistance to ensure that your global vacations, complex visa consultancies, and sacred Umrah pilgrimages are completely seamless, effortless, and stress-free.</p>
+        </div>
+
+        <!-- EXECUTIVE MEMBERS CONCIERGE CHANNELS -->
+        <div class="exec-grid">
+            <div class="exec-card">
+                <p class="exec-role">CEO</p>
+                <p class="exec-name">Taimoor Ahsan</p>
+                <p style="font-size:14px; margin-bottom:5px;">
+                    <i class="fa-solid fa-envelope" style="color:var(--gold);"></i> 
+                    <a href="mailto:Ceo@ambariaglobaltravels.com" class="contact-info-link">Ceo@ambariaglobaltravels.com</a>
+                </p>
+                <p style="font-size:14px;">
+                    <i class="fa-solid fa-phone" style="color:var(--gold);"></i> 
+                    <a href="tel:+923132985992" class="contact-info-link">+92 313 2985992</a>
+                </p>
+            </div>
+            <div class="exec-card">
+                <p class="exec-role">Managing Director</p>
+                <p class="exec-name">Kashif Hussain</p>
+                <p style="font-size:14px; margin-bottom:5px;">
+                    <i class="fa-solid fa-envelope" style="color:var(--gold);"></i> 
+                    <a href="mailto:MD@ambariaglobaltravels.com" class="contact-info-link">MD@ambariaglobaltravels.com</a>
+                </p>
+                <p style="font-size:14px;">
+                    <i class="fa-solid fa-phone" style="color:var(--gold);"></i> 
+                    <a href="tel:+35699479740" class="contact-info-link">+356 99479740</a>
+                </p>
+            </div>
         </div>
     </section>
 
@@ -471,20 +572,25 @@
         <h2 class="section-title">Begin Your Royal Journey</h2>
         <div class="contact-container">
             <p style="font-size: 1.2rem; margin-bottom: 10px;">Ready to tailor your bespoke travel itinerary?</p>
-            <p><strong>Email:</strong> <a class="contact-info-link" href="mailto:info@ambariaglobaltravels.com">info@ambariaglobaltravels.com</a></p>
-            <p><strong>Hotlines:</strong> 
-                <a class="contact-info-link" href="tel:+35699479740">+356 99479740</a> &nbsp;|&nbsp; 
-                <a class="contact-info-link" href="tel:+923182079898">+92 3182079898</a>
-            </p>
-            <p><i class="fab fa-whatsapp" style="color: #25D366;"></i> <strong>WhatsApp Support:</strong> <a class="contact-info-link" href="https://wa.me/35699479740" target="_blank" style="color: #25D366;">+356 99479740</a></p>
+            <p><strong>General Operations Email:</strong> <a class="contact-info-link" href="mailto:info@ambariaglobaltravels.com">info@ambariaglobaltravels.com</a></p>
             <br>
             <a href="https://wa.me/35699479740" target="_blank" class="btn-primary" style="background-color: #25D366; color: white; border: none;"><i class="fab fa-whatsapp"></i> Chat Live with Us</a>
         </div>
     </section>
 
-    <!-- FOOTER -->
+    <!-- FOOTER WITH WORLDWIDE SOCIAL DIRECTORIES -->
     <footer>
         <p>&copy; 2026 Ambaria Global Travels. All Rights Reserved. | The Royal Standard Of Travel</p>
+        
+        <!-- Premium Social Grid Ecosystem -->
+        <div class="social-showcase">
+            <a href="#" class="social-link-item"><i class="fab fa-facebook-f"></i> Facebook</a>
+            <a href="#" class="social-link-item"><i class="fab fa-instagram"></i> Instagram</a>
+            <a href="#" class="social-link-item"><i class="fab fa-x-twitter"></i> Twitter</a>
+            <a href="https://wa.me/35699479740" target="_blank" class="social-link-item"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+            <a href="#" class="social-link-item"><i class="fab fa-tiktok"></i> TikTok</a>
+            <a href="#" class="social-link-item"><i class="fa-solid fa-at"></i> Threads</a>
+        </div>
     </footer>
 
 </body>
