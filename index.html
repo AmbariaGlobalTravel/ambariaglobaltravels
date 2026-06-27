@@ -51,7 +51,7 @@
             transform: translateY(0) scale(1);
         }
 
-        /* --- AUTOMATED INFINITE SLIDER FOR CARD IMAGES --- */
+        /* --- AUTOMATED CAROUSEL FOR CARD IMAGES --- */
         .card-slider-wrapper {
             position: relative;
             width: 100%;
@@ -61,18 +61,17 @@
 
         .card-slider {
             display: flex;
-            width: 400%; /* 4 images = 400% width */
+            width: 400%; /* 4 distinct slides */
             height: 100%;
             animation: infiniteSlide 16s infinite cubic-bezier(0.45, 0, 0.25, 1);
         }
 
         .card-slider img {
-            width: 25%; /* 100% / 4 images */
+            width: 25%;
             height: 100%;
             object-fit: cover;
         }
 
-        /* Fluid cross-fade hold animation timeline */
         @keyframes infiniteSlide {
             0%, 20%   { transform: translateX(0%); }
             25%, 45%  { transform: translateX(-25%); }
@@ -631,13 +630,13 @@
         <h2 class="section-title">Exclusive Umrah Packages</h2>
         <div class="grid-container">
             <div class="card">
-                <!-- SLIDER FOR MAKKAH PACKAGE -->
+                <!-- SLIDER FOR MAKKAH PACKAGE: ONLY CLOCK TOWERS & KAABA -->
                 <div class="card-slider-wrapper">
                     <div class="card-slider">
-                        <img src="https://images.unsplash.com/photo-1564769625905-50e93615e769?auto=format&fit=crop&w=600&q=80" alt="Makkah Holy Kaaba Close Up">
-                        <img src="https://images.unsplash.com/photo-1591604129939-f1efa4d9f7fa?auto=format&fit=crop&w=600&q=80" alt="Grand Mosque Courtyard Aerial View">
-                        <img src="https://images.unsplash.com/photo-1610123598147-f632519900ed?auto=format&fit=crop&w=600&q=80" alt="Makkah Clock Tower luxury sunset view">
-                        <img src="https://images.unsplash.com/photo-1564769625905-50e93615e769?auto=format&fit=crop&w=600&q=80" alt="Makkah View">
+                        <img src="https://images.unsplash.com/photo-1564769625905-50e93615e769?auto=format&fit=crop&w=600&q=80" alt="Holy Kaaba Makkah Structure">
+                        <img src="https://images.unsplash.com/photo-1610123598147-f632519900ed?auto=format&fit=crop&w=600&q=80" alt="Makkah Clock Tower Luxury Skyline">
+                        <img src="https://images.unsplash.com/photo-1591604129939-f1efa4d9f7fa?auto=format&fit=crop&w=600&q=80" alt="Grand Mosque Kaaba Courtyard">
+                        <img src="https://images.unsplash.com/photo-1564769625905-50e93615e769?auto=format&fit=crop&w=600&q=80" alt="Holy Kaaba Makkah Structure">
                     </div>
                 </div>
                 <div class="card-content">
@@ -647,13 +646,13 @@
                 </div>
             </div>
             <div class="card">
-                <!-- SLIDER FOR MADINAH PACKAGE -->
+                <!-- SLIDER FOR MADINAH PACKAGE: ONLY MASJID AL-NABAWI -->
                 <div class="card-slider-wrapper">
                     <div class="card-slider">
-                        <img src="https://images.unsplash.com/photo-1604999333679-b86d54738315?auto=format&fit=crop&w=600&q=80" alt="Madinah Green Dome Canopy">
-                        <img src="https://images.unsplash.com/photo-1591604129939-f1efa4d9f7fa?auto=format&fit=crop&w=600&q=80" alt="Al-Masjid an-Nabawi Architecture">
-                        <img src="https://images.unsplash.com/photo-1564769625905-50e93615e769?auto=format&fit=crop&w=600&q=80" alt="Madinah Umbrellas Evening View">
-                        <img src="https://images.unsplash.com/photo-1604999333679-b86d54738315?auto=format&fit=crop&w=600&q=80" alt="Madinah View">
+                        <img src="https://images.unsplash.com/photo-1604999333679-b86d54738315?auto=format&fit=crop&w=600&q=80" alt="Madinah Prophet Mosque Green Dome">
+                        <img src="https://images.unsplash.com/photo-1590075865003-e48277afd558?auto=format&fit=crop&w=600&q=80" alt="Al-Masjid an-Nabawi Courtyard Architecture">
+                        <img src="https://images.unsplash.com/photo-1572247324584-a841c32b95ac?auto=format&fit=crop&w=600&q=80" alt="Madinah Mosque Minarets Illuminated">
+                        <img src="https://images.unsplash.com/photo-1604999333679-b86d54738315?auto=format&fit=crop&w=600&q=80" alt="Madinah Prophet Mosque Green Dome">
                     </div>
                 </div>
                 <div class="card-content">
@@ -670,13 +669,13 @@
         <h2 class="section-title">Worldwide Destinations</h2>
         <div class="grid-container">
             <div class="card">
-                <!-- SLIDER FOR EIFFEL TOWER & LONDON BRIDGE -->
+                <!-- SLIDER FOR IMPERIAL EUROPE: ONLY LANDMARKS (NO AIRPLANES) -->
                 <div class="card-slider-wrapper">
                     <div class="card-slider">
-                        <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=600&q=80" alt="Eiffel Tower Paris">
-                        <img src="https://images.unsplash.com/photo-1513635269975-59663e0ca1ad?auto=format&fit=crop&w=600&q=80" alt="Tower Bridge London">
-                        <img src="https://images.unsplash.com/photo-1552832230-c0197dd311b5?auto=format&fit=crop&w=600&q=80" alt="Colosseum Rome Italy">
-                        <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=600&q=80" alt="Paris Europe View">
+                        <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=600&q=80" alt="Eiffel Tower Paris France">
+                        <img src="https://images.unsplash.com/photo-1513635269975-59663e0ca1ad?auto=format&fit=crop&w=600&q=80" alt="Tower Bridge London United Kingdom">
+                        <img src="https://images.unsplash.com/photo-1552832230-c0197dd311b5?auto=format&fit=crop&w=600&q=80" alt="Roman Colosseum Heritage Site">
+                        <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=600&q=80" alt="Eiffel Tower Paris France">
                     </div>
                 </div>
                 <div class="card-content">
@@ -686,13 +685,13 @@
                 </div>
             </div>
             <div class="card">
-                <!-- SLIDER FOR AIRLINES AND VISA CONSULTANCY -->
+                <!-- SLIDER FOR VISA & FLIGHTS: PAPERWORK, PASSPORTS, AND AIRLINES -->
                 <div class="card-slider-wrapper">
                     <div class="card-slider">
-                        <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=600&q=80" alt="Commercial Luxury Jet Tail Aviation">
-                        <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=600&q=80" alt="International Travel Passport Stamps Work">
-                        <img src="https://images.unsplash.com/photo-1483450388369-9ed95738483c?auto=format&fit=crop&w=600&q=80" alt="Airport Premium First Class Lounge">
-                        <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=600&q=80" alt="Flight Jet View">
+                        <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=600&q=80" alt="Official Passport Visa Stamps Paperwork">
+                        <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=600&q=80" alt="Commercial Luxury Jet Airliner Wing">
+                        <img src="https://images.unsplash.com/photo-1483450388369-9ed95738483c?auto=format&fit=crop&w=600&q=80" alt="Airport Premium Terminal Flights Board">
+                        <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=600&q=80" alt="Official Passport Visa Stamps Paperwork">
                     </div>
                 </div>
                 <div class="card-content">
