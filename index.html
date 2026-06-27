@@ -98,7 +98,7 @@
             transform: translateY(-2px);
         }
 
-        /* --- HERO SECTION WITH BLENDED CLASSY BACKGROUND --- */
+        /* --- HERO SECTION WITH ELITE MULTI-LAYER COLLAGE BACKGROUND --- */
         .hero {
             position: relative;
             height: 100vh;
@@ -111,43 +111,37 @@
             background-color: var(--dark-blue);
         }
 
-        /* Multi-destination luxury collage canvas */
-        .hero-bg-split {
+        /* 
+           Premium Blend Architecture:
+           Combines Makkah Clock Tower, Eiffel Tower, and London Bridge into a beautiful 
+           gradient-masked panorama that scales beautifully on desktop and mobile.
+        */
+        .hero-bg-collage {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            display: flex;
             z-index: 1;
+            background: 
+                /* Layer 1: Dark luxury vignette overlay for crisp text readability */
+                linear-gradient(135deg, rgba(10, 25, 47, 0.82) 20%, rgba(5, 12, 24, 0.88) 80%),
+                /* Layer 2: Right-aligned European Architecture (Eiffel Tower & Paris Skyline) */
+                linear-gradient(to left, transparent 40%, rgba(10, 25, 47, 1) 100%),
+                url('https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=1200&q=80') right center / 50% no-repeat,
+                /* Layer 3: Left-aligned Sacred Architecture (Makkah Clock Tower Palace) */
+                linear-gradient(to right, transparent 40%, rgba(10, 25, 47, 1) 100%),
+                url('https://images.unsplash.com/photo-1604999333679-b86d54738315?auto=format&fit=crop&w=1200&q=80') left center / 50% no-repeat;
+            background-blend-mode: normal, multiply, normal, multiply, normal;
         }
 
-        .bg-half {
-            width: 50%;
-            height: 100%;
-            background-size: cover;
-            background-position: center;
-        }
-
-        /* Makkah Clock Tower Side */
-        .bg-makkah {
-            background-image: url('https://images.unsplash.com/photo-1604999333679-b86d54738315?auto=format&fit=crop&w=1200&q=80');
-        }
-
-        /* Classy European Destination (Eiffel Tower / London Bridge Landscape) */
-        .bg-europe {
-            background-image: url('https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=1200&q=80');
-        }
-
-        .hero-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            /* Deep, premium mist overlay for flawless contrast and readability */
-            background: linear-gradient(135deg, rgba(10, 25, 47, 0.75), rgba(5, 12, 24, 0.85));
-            z-index: 2;
+        /* Background refinement specifically for mobile screens */
+        @media (max-width: 768px) {
+            .hero-bg-collage {
+                background: 
+                    linear-gradient(rgba(10, 25, 47, 0.85), rgba(5, 12, 24, 0.90)),
+                    url('https://images.unsplash.com/photo-1604999333679-b86d54738315?auto=format&fit=crop&w=800&q=80') center center / cover no-repeat;
+            }
         }
 
         .hero-content {
@@ -160,15 +154,15 @@
         /* --- HIGH-END TYPOGRAPHY EMBELLISHMENTS --- */
         .hero-title {
             font-family: 'Cinzel', serif;
-            font-size: 3.8rem;
+            font-size: 4rem;
             font-weight: 800;
-            letter-spacing: 5px;
+            letter-spacing: 6px;
             margin-bottom: 5px;
             line-height: 1.2;
-            background: linear-gradient(180deg, var(--white) 30%, var(--light-gold) 100%);
+            background: linear-gradient(180deg, var(--white) 20%, var(--light-gold) 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            text-shadow: 0px 4px 20px rgba(0, 0, 0, 0.6);
+            filter: drop-shadow(0px 4px 15px rgba(0, 0, 0, 0.7));
         }
 
         .hero-subtitle {
@@ -176,30 +170,36 @@
             color: var(--gold);
             margin-bottom: 25px;
             font-weight: 500;
-            letter-spacing: 3px;
+            letter-spacing: 4px;
             text-transform: uppercase;
+            text-shadow: 0px 2px 8px rgba(0,0,0,0.5);
         }
 
         .hero-tagline {
             font-family: 'Playfair Display', serif;
             font-style: italic;
-            font-size: 1.8rem;
+            font-size: 1.9rem;
             font-weight: 500;
             margin-bottom: 40px;
             color: var(--white);
             letter-spacing: 1px;
             position: relative;
             display: inline-block;
+            text-shadow: 0px 2px 10px rgba(0, 0, 0, 0.5);
         }
 
         .hero-tagline::before, .hero-tagline::after {
             content: '';
             display: inline-block;
-            width: 40px;
-            height: 1px;
-            background: var(--gold);
+            width: 45px;
+            height: 1.5px;
+            background: linear-gradient(to right, transparent, var(--gold));
             vertical-align: middle;
             margin: 0 15px;
+        }
+
+        .hero-tagline::after {
+            background: linear-gradient(to left, transparent, var(--gold));
         }
 
         .hero-buttons {
@@ -466,18 +466,18 @@
                 gap: 12px;
             }
             .hero-title {
-                font-size: 2.3rem;
-                letter-spacing: 2px;
+                font-size: 2.4rem;
+                letter-spacing: 3px;
             }
             .hero-subtitle {
                 font-size: 1.1rem;
-                letter-spacing: 1px;
+                letter-spacing: 2px;
             }
             .hero-tagline {
-                font-size: 1.3rem;
+                font-size: 1.4rem;
             }
             .hero-tagline::before, .hero-tagline::after {
-                width: 20px;
+                width: 25px;
                 margin: 0 8px;
             }
             .hero-buttons {
@@ -517,13 +517,9 @@
         </div>
     </header>
 
-    <!-- HERO SECTION WITH PREMIUM MAKKAH & EUROPEAN CANVAS COLLAGE -->
+    <!-- HERO SECTION WITH PRESET CHRIS-CROSS VISUAL ECOSYSTEM -->
     <main id="home" class="hero">
-        <div class="hero-bg-split">
-            <div class="bg-half bg-makkah"></div>
-            <div class="bg-half bg-europe"></div>
-        </div>
-        <div class="hero-overlay"></div>
+        <div class="hero-bg-collage"></div>
         <div class="hero-content">
             <h1 class="hero-title">AMBARIA GLOBAL TRAVELS</h1>
             <p class="hero-subtitle">Luxury Umrah & Worldwide Travel</p>
