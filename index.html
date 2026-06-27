@@ -97,7 +97,7 @@
             transform: translateY(-2px);
         }
 
-        /* --- HERO SECTION WITH STABLE HIGH-RES IMAGE BACKGROUND --- */
+        /* --- HERO SECTION WITH BLENDED BACKGROUND --- */
         .hero {
             position: relative;
             height: 100vh;
@@ -107,8 +107,33 @@
             text-align: center;
             color: var(--white);
             overflow: hidden;
-            /* Premium luxury resort image featuring breathtaking architecture and greenery */
-            background: url('https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
+            background-color: var(--dark-blue);
+        }
+
+        /* Dual-image canvas structure to seamlessly show both worlds */
+        .hero-bg-split {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            z-index: 1;
+        }
+
+        .bg-half {
+            width: 50%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .bg-makkah {
+            background-image: url('https://images.unsplash.com/photo-1564769625905-50e93615e769?auto=format&fit=crop&w=1200&q=80');
+        }
+
+        .bg-europe {
+            background-image: url('https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=1200&q=80');
         }
 
         .hero-overlay {
@@ -117,7 +142,8 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(rgba(10, 25, 47, 0.55), rgba(10, 25, 47, 0.75));
+            /* Smooth vignette overlay to blend both sides perfectly under the text */
+            background: linear-gradient(rgba(10, 25, 47, 0.65), rgba(10, 25, 47, 0.8));
             z-index: 2;
         }
 
@@ -159,35 +185,6 @@
             gap: 15px;
         }
 
-        .btn-primary {
-            background-color: var(--gold);
-            color: var(--dark-blue);
-            padding: 12px 28px;
-            text-decoration: none;
-            font-weight: 600;
-            border-radius: 4px;
-            transition: all 0.3s ease;
-        }
-
-        .btn-primary:hover {
-            background-color: var(--white);
-        }
-
-        .btn-secondary {
-            border: 2px solid var(--white);
-            color: var(--white);
-            padding: 12px 28px;
-            text-decoration: none;
-            font-weight: 600;
-            border-radius: 4px;
-            transition: all 0.3s ease;
-        }
-
-        .btn-secondary:hover {
-            background-color: var(--white);
-            color: var(--dark-blue);
-        }
-
         /* --- SECTION STRUCTURES --- */
         section {
             padding: 80px 20px;
@@ -213,7 +210,7 @@
             margin: 10px auto 0;
         }
 
-        /* --- CARDS GRID (PACKAGES / TOURS) --- */
+        /* --- CARDS GRID --- */
         .grid-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -288,6 +285,7 @@
             border-radius: 6px;
             padding: 20px;
             box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+            text-align: left;
         }
 
         .exec-role {
@@ -325,16 +323,16 @@
             color: var(--gold);
         }
 
-        /* --- SOCIAL MEDIA GRID --- */
+        /* --- SOCIAL MEDIA SHOWCASE FOOTER GRID --- */
         .social-showcase {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 15px;
-            max-width: 500px;
-            margin: 30px auto 10px;
+            max-width: 600px;
+            margin: 35px auto 10px;
         }
 
-        @media(max-width: 500px) {
+        @media(max-width: 600px) {
             .social-showcase {
                 grid-template-columns: repeat(2, 1fr);
             }
@@ -345,12 +343,12 @@
             align-items: center;
             gap: 10px;
             background-color: rgba(255,255,255,0.05);
-            padding: 10px 15px;
+            padding: 12px 15px;
             border-radius: 4px;
             color: var(--white);
             text-decoration: none;
             font-size: 13px;
-            border: 1px solid rgba(212,175,55,0.1);
+            border: 1px solid rgba(212,175,55,0.15);
             transition: all 0.3s ease;
         }
 
@@ -363,6 +361,38 @@
 
         .social-link-item i {
             font-size: 16px;
+            width: 20px;
+            text-align: center;
+        }
+
+        /* --- BUTTON ARCHITECTURES --- */
+        .btn-primary {
+            background-color: var(--gold);
+            color: var(--dark-blue);
+            padding: 12px 28px;
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--white);
+        }
+
+        .btn-secondary {
+            border: 2px solid var(--white);
+            color: var(--white);
+            padding: 12px 28px;
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--white);
+            color: var(--dark-blue);
         }
 
         /* --- FLOATING WHATSAPP BUTTON --- */
@@ -455,8 +485,12 @@
         </div>
     </header>
 
-    <!-- HERO SECTION WITH STATIC LUXURY LANDSCAPE FALLBACK -->
+    <!-- HERO SECTION WITH CUSTOM MAKKAH/EUROPE SPLIT CANVAS -->
     <main id="home" class="hero">
+        <div class="hero-bg-split">
+            <div class="bg-half bg-makkah"></div>
+            <div class="bg-half bg-europe"></div>
+        </div>
         <div class="hero-overlay"></div>
         <div class="hero-content">
             <h1 class="hero-title">AMBARIA GLOBAL TRAVELS</h1>
@@ -515,21 +549,21 @@
         </div>
     </section>
 
-    <!-- ABOUT SECTION WITH UPDATED MANAGEMENT DESCRIPTION -->
+    <!-- ABOUT SECTION WITH UPDATED DESCRIPTION & BOARD DIRECTORY -->
     <section id="about" style="background-color: var(--white); border-radius: 12px; margin-bottom: 60px;">
         <h2 class="section-title">About Ambaria Global Travels</h2>
         <div class="about-text">
-            <p>Welcome to Ambaria Global Travels, where our name embodies the very essence of luxury travel and your journey is elevated to an art form. Operating with executive management based in Europe alongside our dedicated operations in Pakistan, we bridge world-class European standards of hospitality with deep local expertise to curate truly unforgettable worldwide destinations. We understand that true luxury lies in flawless peace of mind, which is why our team is at your service 24/7 providing round-the-clock, real-time assistance to ensure that your global vacations, complex visa consultancies, and sacred Umrah pilgrimages are completely seamless, effortless, and stress-free.</p>
+            <p>Welcome to Ambaria Global Travels where our name signifies the pinnacle of luxury travel. Bridging elite European hospitality standards with our operational roots in Pakistan, we craft unforgettable worldwide journeys, premium visa solutions, and sacred Umrah pilgrimages. Because true luxury means flawless peace of mind, our dedicated team provides 24/7 real-time assistance ensuring your travel is always seamless, stress-free, and extraordinary.</p>
         </div>
 
-        <!-- EXECUTIVE EXECUTIVE DETAILS -->
+        <!-- EXECUTIVE MANAGEMENT BOARD DIRECTORY -->
         <div class="exec-grid">
             <div class="exec-card">
                 <p class="exec-role">CEO</p>
                 <p class="exec-name">Taimoor Ahsan</p>
-                <p style="font-size:14px; margin-bottom:5px;">
+                <p style="font-size:14px; margin-bottom:6px;">
                     <i class="fa-solid fa-envelope" style="color:var(--gold);"></i> 
-                    <a href="mailto:Ceo@ambariaglobaltravels.com" class="contact-info-link">Ceo@ambariaglobaltravels.com</a>
+                    <a href="mailto:CEO@Ambariaglobaltravels.com" class="contact-info-link">CEO@Ambariaglobaltravels.com</a>
                 </p>
                 <p style="font-size:14px;">
                     <i class="fa-solid fa-phone" style="color:var(--gold);"></i> 
@@ -539,7 +573,7 @@
             <div class="exec-card">
                 <p class="exec-role">Managing Director</p>
                 <p class="exec-name">Kashif Hussain</p>
-                <p style="font-size:14px; margin-bottom:5px;">
+                <p style="font-size:14px; margin-bottom:6px;">
                     <i class="fa-solid fa-envelope" style="color:var(--gold);"></i> 
                     <a href="mailto:MD@ambariaglobaltravels.com" class="contact-info-link">MD@ambariaglobaltravels.com</a>
                 </p>
@@ -562,18 +596,18 @@
         </div>
     </section>
 
-    <!-- FOOTER WITH BRAND CHANNELS -->
+    <!-- FOOTER WITH INTEGRATED BRAND CHANNELS -->
     <footer>
         <p>&copy; 2026 Ambaria Global Travels. All Rights Reserved. | The Royal Standard Of Travel</p>
         
-        <!-- Social Profiles Ecosystem -->
+        <!-- Social Profiles Ecosystem Grid -->
         <div class="social-showcase">
-            <a href="#" class="social-link-item"><i class="fab fa-facebook-f"></i> Facebook</a>
-            <a href="#" class="social-link-item"><i class="fab fa-instagram"></i> Instagram</a>
-            <a href="#" class="social-link-item"><i class="fab fa-x-twitter"></i> Twitter</a>
-            <a href="https://wa.me/35699479740" target="_blank" class="social-link-item"><i class="fab fa-whatsapp"></i> WhatsApp</a>
-            <a href="#" class="social-link-item"><i class="fab fa-tiktok"></i> TikTok</a>
-            <a href="#" class="social-link-item"><i class="fa-solid fa-at"></i> Threads</a>
+            <a href="#" class="social-link-item" title="Facebook"><i class="fab fa-facebook-f"></i> Facebook</a>
+            <a href="#" class="social-link-item" title="Instagram"><i class="fab fa-instagram"></i> Instagram</a>
+            <a href="#" class="social-link-item" title="Twitter"><i class="fab fa-x-twitter"></i> Twitter</a>
+            <a href="https://wa.me/35699479740" target="_blank" class="social-link-item" title="WhatsApp Channel"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+            <a href="#" class="social-link-item" title="TikTok"><i class="fab fa-tiktok"></i> TikTok</a>
+            <a href="#" class="social-link-item" title="Threads"><i class="fa-solid fa-at"></i> Threads</a>
         </div>
     </footer>
 
