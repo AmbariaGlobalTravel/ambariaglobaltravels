@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ambaria Global Travels | The Royal Standard Of Travel</title>
     <!-- Google Fonts for Luxury Aesthetic & Calligraphy -->
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;800&family=Playfair+Display:ital,wght@1,500;1,600&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght=500;700;800&family=Playfair+Display:ital,wght=1,500;1,600&family=Poppins:wght=300;400;500;600&display=swap" rel="stylesheet">
     <!-- FontAwesome for Premium Social & WhatsApp Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
@@ -49,6 +49,36 @@
         .reveal.active {
             opacity: 1;
             transform: translateY(0) scale(1);
+        }
+
+        /* --- AUTOMATED INFINITE SLIDER FOR CARD IMAGES --- */
+        .card-slider-wrapper {
+            position: relative;
+            width: 100%;
+            height: 240px;
+            overflow: hidden;
+        }
+
+        .card-slider {
+            display: flex;
+            width: 400%; /* 4 images = 400% width */
+            height: 100%;
+            animation: infiniteSlide 16s infinite cubic-bezier(0.45, 0, 0.25, 1);
+        }
+
+        .card-slider img {
+            width: 25%; /* 100% / 4 images */
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Fluid cross-fade hold animation timeline */
+        @keyframes infiniteSlide {
+            0%, 20%   { transform: translateX(0%); }
+            25%, 45%  { transform: translateX(-25%); }
+            50%, 70%  { transform: translateX(-50%); }
+            75%, 95%  { transform: translateX(-75%); }
+            100%      { transform: translateX(0%); }
         }
 
         /* --- NAVIGATION BAR --- */
@@ -237,12 +267,6 @@
             transform: translateY(-5px);
         }
 
-        .card-img {
-            width: 100%;
-            height: 240px;
-            object-fit: cover;
-        }
-
         .card-content {
             padding: 25px;
         }
@@ -374,7 +398,7 @@
             color: var(--gold);
         }
 
-        /* --- REMASTERED CALL-TO-ACTION BACKGROUND FOR CONTACT SECTION --- */
+        /* --- CALL-TO-ACTION BACKGROUND FOR CONTACT SECTION --- */
         .contact-premium-wrapper {
             background: 
                 linear-gradient(135deg, rgba(10, 25, 47, 0.92) 0%, rgba(5, 12, 24, 0.95) 100%),
@@ -607,7 +631,15 @@
         <h2 class="section-title">Exclusive Umrah Packages</h2>
         <div class="grid-container">
             <div class="card">
-                <img class="card-img" src="https://images.unsplash.com/photo-1564769625905-50e93615e769?auto=format&fit=crop&w=600&q=80" alt="Makkah Royal Package">
+                <!-- SLIDER FOR MAKKAH PACKAGE -->
+                <div class="card-slider-wrapper">
+                    <div class="card-slider">
+                        <img src="https://images.unsplash.com/photo-1564769625905-50e93615e769?auto=format&fit=crop&w=600&q=80" alt="Makkah Holy Kaaba Close Up">
+                        <img src="https://images.unsplash.com/photo-1591604129939-f1efa4d9f7fa?auto=format&fit=crop&w=600&q=80" alt="Grand Mosque Courtyard Aerial View">
+                        <img src="https://images.unsplash.com/photo-1610123598147-f632519900ed?auto=format&fit=crop&w=600&q=80" alt="Makkah Clock Tower luxury sunset view">
+                        <img src="https://images.unsplash.com/photo-1564769625905-50e93615e769?auto=format&fit=crop&w=600&q=80" alt="Makkah View">
+                    </div>
+                </div>
                 <div class="card-content">
                     <p class="card-tag">5-Star Luxury</p>
                     <h3 class="card-title">The Royal Makkah Package</h3>
@@ -615,7 +647,15 @@
                 </div>
             </div>
             <div class="card">
-                <img class="card-img" src="https://images.unsplash.com/photo-1591604129939-f1efa4d9f7fa?auto=format&fit=crop&w=600&q=80" alt="Madinah Serenity Package">
+                <!-- SLIDER FOR MADINAH PACKAGE -->
+                <div class="card-slider-wrapper">
+                    <div class="card-slider">
+                        <img src="https://images.unsplash.com/photo-1604999333679-b86d54738315?auto=format&fit=crop&w=600&q=80" alt="Madinah Green Dome Canopy">
+                        <img src="https://images.unsplash.com/photo-1591604129939-f1efa4d9f7fa?auto=format&fit=crop&w=600&q=80" alt="Al-Masjid an-Nabawi Architecture">
+                        <img src="https://images.unsplash.com/photo-1564769625905-50e93615e769?auto=format&fit=crop&w=600&q=80" alt="Madinah Umbrellas Evening View">
+                        <img src="https://images.unsplash.com/photo-1604999333679-b86d54738315?auto=format&fit=crop&w=600&q=80" alt="Madinah View">
+                    </div>
+                </div>
                 <div class="card-content">
                     <p class="card-tag">Premium Comfort</p>
                     <h3 class="card-title">Madinah Serenity Suite</h3>
@@ -630,7 +670,15 @@
         <h2 class="section-title">Worldwide Destinations</h2>
         <div class="grid-container">
             <div class="card">
-                <img class="card-img" src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=600&q=80" alt="Europe Imperial Tour">
+                <!-- SLIDER FOR EIFFEL TOWER & LONDON BRIDGE -->
+                <div class="card-slider-wrapper">
+                    <div class="card-slider">
+                        <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=600&q=80" alt="Eiffel Tower Paris">
+                        <img src="https://images.unsplash.com/photo-1513635269975-59663e0ca1ad?auto=format&fit=crop&w=600&q=80" alt="Tower Bridge London">
+                        <img src="https://images.unsplash.com/photo-1552832230-c0197dd311b5?auto=format&fit=crop&w=600&q=80" alt="Colosseum Rome Italy">
+                        <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=600&q=80" alt="Paris Europe View">
+                    </div>
+                </div>
                 <div class="card-content">
                     <p class="card-tag">Europe</p>
                     <h3 class="card-title">Imperial European Escapes</h3>
@@ -638,7 +686,15 @@
                 </div>
             </div>
             <div class="card">
-                <img class="card-img" src="https://images.unsplash.com/photo-1544644181-1484b3fdfc62?auto=format&fit=crop&w=600&q=80" alt="Visa Assistance">
+                <!-- SLIDER FOR AIRLINES AND VISA CONSULTANCY -->
+                <div class="card-slider-wrapper">
+                    <div class="card-slider">
+                        <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=600&q=80" alt="Commercial Luxury Jet Tail Aviation">
+                        <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=600&q=80" alt="International Travel Passport Stamps Work">
+                        <img src="https://images.unsplash.com/photo-1483450388369-9ed95738483c?auto=format&fit=crop&w=600&q=80" alt="Airport Premium First Class Lounge">
+                        <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=600&q=80" alt="Flight Jet View">
+                    </div>
+                </div>
                 <div class="card-content">
                     <p class="card-tag">Global Concierge</p>
                     <h3 class="card-title">Global Visa & Flight Services</h3>
@@ -723,12 +779,11 @@
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('active');
-                    // Stop observing once tracked to keep performance perfect
                     observer.unobserve(entry.target);
                 }
             });
         }, {
-            threshold: 0.12, // Section triggers exactly when 12% enters view
+            threshold: 0.12,
             rootMargin: "0px 0px -40px 0px"
         });
 
