@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ambaria Global Travels | The Royal Standard Of Travel</title>
-    <!-- Google Fonts for Luxury Aesthetic -->
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- Google Fonts for Luxury Aesthetic & Calligraphy -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;800&family=Playfair+Display:ital,wght@1,500;1,600&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <!-- FontAwesome for Premium Social & WhatsApp Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
@@ -13,6 +13,7 @@
         /* --- ALL-IN-ONE SYSTEM STYLES --- */
         :root {
             --gold: #D4AF37;
+            --light-gold: #F3E5AB;
             --dark-blue: #0A192F;
             --light-bg: #F4F6F9;
             --white: #FFFFFF;
@@ -97,7 +98,7 @@
             transform: translateY(-2px);
         }
 
-        /* --- HERO SECTION WITH BLENDED BACKGROUND --- */
+        /* --- HERO SECTION WITH BLENDED CLASSY BACKGROUND --- */
         .hero {
             position: relative;
             height: 100vh;
@@ -110,7 +111,7 @@
             background-color: var(--dark-blue);
         }
 
-        /* Dual-image canvas structure to seamlessly show both worlds */
+        /* Multi-destination luxury collage canvas */
         .hero-bg-split {
             position: absolute;
             top: 0;
@@ -128,12 +129,14 @@
             background-position: center;
         }
 
+        /* Makkah Clock Tower Side */
         .bg-makkah {
-            background-image: url('https://images.unsplash.com/photo-1564769625905-50e93615e769?auto=format&fit=crop&w=1200&q=80');
+            background-image: url('https://images.unsplash.com/photo-1604999333679-b86d54738315?auto=format&fit=crop&w=1200&q=80');
         }
 
+        /* Classy European Destination (Eiffel Tower / London Bridge Landscape) */
         .bg-europe {
-            background-image: url('https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=1200&q=80');
+            background-image: url('https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=1200&q=80');
         }
 
         .hero-overlay {
@@ -142,47 +145,67 @@
             left: 0;
             width: 100%;
             height: 100%;
-            /* Smooth vignette overlay to blend both sides perfectly under the text */
-            background: linear-gradient(rgba(10, 25, 47, 0.65), rgba(10, 25, 47, 0.8));
+            /* Deep, premium mist overlay for flawless contrast and readability */
+            background: linear-gradient(135deg, rgba(10, 25, 47, 0.75), rgba(5, 12, 24, 0.85));
             z-index: 2;
         }
 
         .hero-content {
             position: relative;
             z-index: 3;
-            max-width: 800px;
+            max-width: 950px;
             padding: 20px;
         }
 
+        /* --- HIGH-END TYPOGRAPHY EMBELLISHMENTS --- */
         .hero-title {
             font-family: 'Cinzel', serif;
-            font-size: 3.5rem;
-            font-weight: 700;
-            letter-spacing: 3px;
-            margin-bottom: 10px;
-            color: var(--white);
-            text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+            font-size: 3.8rem;
+            font-weight: 800;
+            letter-spacing: 5px;
+            margin-bottom: 5px;
+            line-height: 1.2;
+            background: linear-gradient(180deg, var(--white) 30%, var(--light-gold) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0px 4px 20px rgba(0, 0, 0, 0.6);
         }
 
         .hero-subtitle {
-            font-size: 1.5rem;
+            font-size: 1.4rem;
             color: var(--gold);
-            margin-bottom: 15px;
-            font-weight: 400;
-            letter-spacing: 1px;
+            margin-bottom: 25px;
+            font-weight: 500;
+            letter-spacing: 3px;
+            text-transform: uppercase;
         }
 
         .hero-tagline {
+            font-family: 'Playfair Display', serif;
             font-style: italic;
-            font-size: 1.1rem;
-            margin-bottom: 30px;
-            opacity: 0.9;
+            font-size: 1.8rem;
+            font-weight: 500;
+            margin-bottom: 40px;
+            color: var(--white);
+            letter-spacing: 1px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .hero-tagline::before, .hero-tagline::after {
+            content: '';
+            display: inline-block;
+            width: 40px;
+            height: 1px;
+            background: var(--gold);
+            vertical-align: middle;
+            margin: 0 15px;
         }
 
         .hero-buttons {
             display: flex;
             justify-content: center;
-            gap: 15px;
+            gap: 20px;
         }
 
         /* --- SECTION STRUCTURES --- */
@@ -323,7 +346,7 @@
             color: var(--gold);
         }
 
-        /* --- SOCIAL MEDIA SHOWCASE FOOTER GRID --- */
+        /* --- SOCIAL MEDIA GRID --- */
         .social-showcase {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -443,17 +466,26 @@
                 gap: 12px;
             }
             .hero-title {
-                font-size: 2.2rem;
+                font-size: 2.3rem;
+                letter-spacing: 2px;
             }
             .hero-subtitle {
-                font-size: 1.2rem;
+                font-size: 1.1rem;
+                letter-spacing: 1px;
+            }
+            .hero-tagline {
+                font-size: 1.3rem;
+            }
+            .hero-tagline::before, .hero-tagline::after {
+                width: 20px;
+                margin: 0 8px;
             }
             .hero-buttons {
                 flex-direction: column;
                 align-items: center;
             }
             .btn-primary, .btn-secondary {
-                width: 80%;
+                width: 85%;
             }
             section {
                 padding: 60px 15px;
@@ -485,7 +517,7 @@
         </div>
     </header>
 
-    <!-- HERO SECTION WITH CUSTOM MAKKAH/EUROPE SPLIT CANVAS -->
+    <!-- HERO SECTION WITH PREMIUM MAKKAH & EUROPEAN CANVAS COLLAGE -->
     <main id="home" class="hero">
         <div class="hero-bg-split">
             <div class="bg-half bg-makkah"></div>
@@ -495,7 +527,7 @@
         <div class="hero-content">
             <h1 class="hero-title">AMBARIA GLOBAL TRAVELS</h1>
             <p class="hero-subtitle">Luxury Umrah & Worldwide Travel</p>
-            <p class="hero-tagline">"The Royal Standard Of Travel"</p>
+            <p class="hero-tagline">The Royal Standard Of Travel</p>
             <div class="hero-buttons">
                 <a href="#umrah" class="btn-primary">Explore Packages</a>
                 <a href="https://wa.me/35699479740" target="_blank" class="btn-secondary"><i class="fab fa-whatsapp"></i> WhatsApp Us</a>
@@ -549,14 +581,14 @@
         </div>
     </section>
 
-    <!-- ABOUT SECTION WITH UPDATED DESCRIPTION & BOARD DIRECTORY -->
+    <!-- ABOUT SECTION WITH REMASTERED LUXURY CONTENT -->
     <section id="about" style="background-color: var(--white); border-radius: 12px; margin-bottom: 60px;">
         <h2 class="section-title">About Ambaria Global Travels</h2>
         <div class="about-text">
-            <p>Welcome to Ambaria Global Travels where our name signifies the pinnacle of luxury travel. Bridging elite European hospitality standards with our operational roots in Pakistan, we craft unforgettable worldwide journeys, premium visa solutions, and sacred Umrah pilgrimages. Because true luxury means flawless peace of mind, our dedicated team provides 24/7 real-time assistance ensuring your travel is always seamless, stress-free, and extraordinary.</p>
+            <p>Welcome to Ambaria Global Travels  where our name signifies the pinnacle of luxury travel. Bridging elite European hospitality standards with our operational roots in Pakistan, we craft unforgettable worldwide journeys, premium visa solutions, and sacred Umrah pilgrimages. Because true luxury means flawless peace of mind, our dedicated team provides 24/7 real-time assistance ensuring your travel is always seamless, stress-free, and extraordinary.</p>
         </div>
 
-        <!-- EXECUTIVE MANAGEMENT BOARD DIRECTORY -->
+        <!-- EXECUTIVE EXECUTIVE CHANNELS -->
         <div class="exec-grid">
             <div class="exec-card">
                 <p class="exec-role">CEO</p>
@@ -596,18 +628,18 @@
         </div>
     </section>
 
-    <!-- FOOTER WITH INTEGRATED BRAND CHANNELS -->
+    <!-- FOOTER WITH WORLDWIDE SOCIAL DIRECTORIES -->
     <footer>
         <p>&copy; 2026 Ambaria Global Travels. All Rights Reserved. | The Royal Standard Of Travel</p>
         
-        <!-- Social Profiles Ecosystem Grid -->
+        <!-- Premium Social Grid Ecosystem -->
         <div class="social-showcase">
-            <a href="#" class="social-link-item" title="Facebook"><i class="fab fa-facebook-f"></i> Facebook</a>
-            <a href="#" class="social-link-item" title="Instagram"><i class="fab fa-instagram"></i> Instagram</a>
-            <a href="#" class="social-link-item" title="Twitter"><i class="fab fa-x-twitter"></i> Twitter</a>
-            <a href="https://wa.me/35699479740" target="_blank" class="social-link-item" title="WhatsApp Channel"><i class="fab fa-whatsapp"></i> WhatsApp</a>
-            <a href="#" class="social-link-item" title="TikTok"><i class="fab fa-tiktok"></i> TikTok</a>
-            <a href="#" class="social-link-item" title="Threads"><i class="fa-solid fa-at"></i> Threads</a>
+            <a href="#" class="social-link-item" title="Facebook Ambaria global travels"><i class="fab fa-facebook-f"></i> Facebook</a>
+            <a href="#" class="social-link-item" title="Instagram Ambariatravels.official"><i class="fab fa-instagram"></i> Instagram</a>
+            <a href="#" class="social-link-item" title="Twitter Ambariatravels.official"><i class="fab fa-x-twitter"></i> Twitter</a>
+            <a href="https://wa.me/35699479740" target="_blank" class="social-link-item" title="WhatsApp Channel Ambariatravels.official"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+            <a href="#" class="social-link-item" title="TikTok Ambariatravels.official"><i class="fab fa-tiktok"></i> TikTok</a>
+            <a href="#" class="social-link-item" title="Threads Ambariatravels.official"><i class="fa-solid fa-at"></i> Threads</a>
         </div>
     </footer>
 
