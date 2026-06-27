@@ -15,6 +15,7 @@
             --gold: #D4AF37;
             --light-gold: #F3E5AB;
             --dark-blue: #0A192F;
+            --deep-navy: #050C18;
             --light-bg: #F4F6F9;
             --white: #FFFFFF;
             --text-dark: #333333;
@@ -98,7 +99,7 @@
             transform: translateY(-2px);
         }
 
-        /* --- HERO SECTION WITH FULL-COVER PREVIEW SKYLINE --- */
+        /* --- HERO SECTION WITH FIXED UNIFIED SCROLLING --- */
         .hero {
             position: relative;
             height: 100vh;
@@ -109,13 +110,12 @@
             text-align: center;
             color: var(--white);
             overflow: hidden;
-            /* Using a premium panoramic blend that covers 100% of the screen area seamlessly */
+            /* Scroll bug fixed: Removed background-attachment: fixed; so picture and writing move as one */
             background: 
                 linear-gradient(135deg, rgba(10, 25, 47, 0.8) 0%, rgba(5, 12, 24, 0.85) 100%),
                 url('https://images.unsplash.com/photo-1578894381163-e72c17f2d45f?auto=format&fit=crop&w=1920&q=90');
             background-size: cover;
             background-position: center;
-            background-attachment: fixed;
         }
 
         .hero-content {
@@ -257,50 +257,114 @@
             margin-bottom: 20px;
         }
 
-        /* --- ABOUT & CONTACT STYLING --- */
-        .about-text {
+        /* --- UPGRADED PREMIUM ABOUT SECTION (NO MORE WHITE BG) --- */
+        .about-section-premium {
+            background: linear-gradient(135deg, var(--dark-blue) 0%, var(--deep-navy) 100%);
+            border: 2px solid var(--gold);
+            border-radius: 16px;
+            padding: 60px 40px;
+            margin-top: 40px;
+            margin-bottom: 60px;
+            box-shadow: 0 10px 30px rgba(5, 12, 24, 0.4);
+        }
+
+        .about-section-premium .section-title {
+            color: var(--white);
+        }
+
+        .about-text-premium {
+            max-width: 900px;
+            margin: 0 auto 40px;
+            text-align: center;
+            font-size: 1.15rem;
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.9;
+        }
+
+        /* --- BEAUTIFUL LUXURY EXECUTIVE CARDS --- */
+        .exec-grid-premium {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
             max-width: 900px;
             margin: 0 auto;
+        }
+
+        .exec-card-premium {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(212, 175, 55, 0.4);
+            border-radius: 12px;
+            padding: 30px 25px;
             text-align: center;
-            font-size: 1.1rem;
-            color: #444;
-            line-height: 1.8;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            box-shadow: inset 0 0 15px rgba(212, 175, 55, 0.05);
         }
 
-        .exec-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
+        .exec-card-premium::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
-            max-width: 900px;
-            margin: 40px auto 0;
+            height: 4px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
         }
 
-        .exec-card {
-            background-color: var(--white);
-            border: 1px solid rgba(212, 175, 55, 0.3);
-            border-radius: 6px;
-            padding: 20px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.02);
-            text-align: left;
+        .exec-card-premium:hover {
+            transform: translateY(-5px);
+            border-color: var(--gold);
+            background: rgba(255, 255, 255, 0.06);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
         }
 
-        .exec-role {
+        .exec-role-premium {
             font-family: 'Cinzel', serif;
             color: var(--gold);
-            font-size: 1.1rem;
+            font-size: 0.95rem;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+
+        .exec-name-premium {
+            font-family: 'Cinzel', serif;
+            font-size: 1.6rem;
+            color: var(--white);
             font-weight: 700;
             letter-spacing: 1px;
-            margin-bottom: 5px;
+            margin-bottom: 20px;
         }
 
-        .exec-name {
-            font-size: 1.3rem;
-            color: var(--dark-blue);
-            font-weight: 600;
-            margin-bottom: 15px;
+        .exec-meta-line {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 10px;
+            font-size: 14px;
         }
 
+        .exec-meta-line i {
+            color: var(--gold);
+            font-size: 14px;
+            width: 20px;
+        }
+
+        .exec-link {
+            color: rgba(255, 255, 255, 0.85);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .exec-link:hover {
+            color: var(--gold);
+        }
+
+        /* --- CONTACT STYLING --- */
         .contact-container {
             display: flex;
             flex-direction: column;
@@ -461,6 +525,9 @@
             .btn-primary, .btn-secondary {
                 width: 85%;
             }
+            .about-section-premium {
+                padding: 40px 20px;
+            }
             section {
                 padding: 60px 15px;
             }
@@ -491,7 +558,7 @@
         </div>
     </header>
 
-    <!-- HERO SECTION WITH PRESET FULL COVER VISUAL ECOSYSTEM -->
+    <!-- HERO SECTION WITH FIXED UNIFIED SCROLLING -->
     <main id="home" class="hero">
         <div class="hero-content">
             <h1 class="hero-title">AMBARIA GLOBAL TRAVELS</h1>
@@ -550,38 +617,41 @@
         </div>
     </section>
 
-    <!-- ABOUT SECTION WITH REMASTERED LUXURY CONTENT -->
-    <section id="about" style="background-color: var(--white); border-radius: 12px; margin-bottom: 60px;">
-        <h2 class="section-title">About Ambaria Global Travels</h2>
-        <div class="about-text">
-            <p>Welcome to Ambaria Global Travels where our name signifies the pinnacle of luxury travel. Bridging elite European hospitality standards with our operational roots in Pakistan, we craft unforgettable worldwide journeys, premium visa solutions, and sacred Umrah pilgrimages. Because true luxury means flawless peace of mind, our dedicated team provides 24/7 real-time assistance ensuring your travel is always seamless, stress-free, and extraordinary.</p>
-        </div>
-
-        <!-- EXECUTIVE MANAGEMENT CHANNELS -->
-        <div class="exec-grid">
-            <div class="exec-card">
-                <p class="exec-role">CEO</p>
-                <p class="exec-name">Taimoor Ahsan</p>
-                <p style="font-size:14px; margin-bottom:6px;">
-                    <i class="fa-solid fa-envelope" style="color:var(--gold);"></i> 
-                    <a href="mailto:CEO@Ambariaglobaltravels.com" class="contact-info-link">CEO@Ambariaglobaltravels.com</a>
-                </p>
-                <p style="font-size:14px;">
-                    <i class="fa-solid fa-phone" style="color:var(--gold);"></i> 
-                    <a href="tel:+923132985992" class="contact-info-link">+92 313 2985992</a>
-                </p>
+    <!-- REMASTERED PREMIUM ABOUT & EXECUTIVE BOARD DIRECTORY -->
+    <section id="about">
+        <div class="about-section-premium">
+            <h2 class="section-title">About Ambaria Global Travels</h2>
+            <div class="about-text-premium">
+                <p>Welcome to Ambaria Global Travels where our name signifies the pinnacle of luxury travel. Bridging elite European hospitality standards with our operational roots in Pakistan, we craft unforgettable worldwide journeys, premium visa solutions, and sacred Umrah pilgrimages. Because true luxury means flawless peace of mind, our dedicated team provides 24/7 real-time assistance ensuring your travel is always seamless, stress-free, and extraordinary.</p>
             </div>
-            <div class="exec-card">
-                <p class="exec-role">Managing Director</p>
-                <p class="exec-name">Kashif Hussain</p>
-                <p style="font-size:14px; margin-bottom:6px;">
-                    <i class="fa-solid fa-envelope" style="color:var(--gold);"></i> 
-                    <a href="mailto:MD@ambariaglobaltravels.com" class="contact-info-link">MD@ambariaglobaltravels.com</a>
-                </p>
-                <p style="font-size:14px;">
-                    <i class="fa-solid fa-phone" style="color:var(--gold);"></i> 
-                    <a href="tel:+35699479740" class="contact-info-link">+356 99479740</a>
-                </p>
+
+            <!-- PREMIUM LUXURY MANAGEMENT CARDS -->
+            <div class="exec-grid-premium">
+                <div class="exec-card-premium">
+                    <p class="exec-role-premium">Chief Executive Officer</p>
+                    <p class="exec-name-premium">Taimoor Ahsan</p>
+                    <div class="exec-meta-line">
+                        <i class="fa-solid fa-envelope"></i>
+                        <a href="mailto:CEO@Ambariaglobaltravels.com" class="exec-link">CEO@Ambariaglobaltravels.com</a>
+                    </div>
+                    <div class="exec-meta-line">
+                        <i class="fa-solid fa-phone"></i>
+                        <a href="tel:+923132985992" class="exec-link">+92 313 2985992</a>
+                    </div>
+                </div>
+                
+                <div class="exec-card-premium">
+                    <p class="exec-role-premium">Managing Director</p>
+                    <p class="exec-name-premium">Kashif Hussain</p>
+                    <div class="exec-meta-line">
+                        <i class="fa-solid fa-envelope"></i>
+                        <a href="mailto:MD@ambariaglobaltravels.com" class="exec-link">MD@ambariaglobaltravels.com</a>
+                    </div>
+                    <div class="exec-meta-line">
+                        <i class="fa-solid fa-phone"></i>
+                        <a href="tel:+35699479740" class="exec-link">+356 99479740</a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
