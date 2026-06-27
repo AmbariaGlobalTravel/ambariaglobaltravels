@@ -1,131 +1,441 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ambaria Global Travels</title>
-<link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ambaria Global Travels | The Royal Standard Of Travel</title>
+    <!-- Google Fonts for Luxury Aesthetic -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- ALL-IN-ONE SYSTEM STYLES --- */
+        :root {
+            --gold: #D4AF37;
+            --dark-blue: #0A192F;
+            --light-bg: #F4F6F9;
+            --white: #FFFFFF;
+            --text-dark: #333333;
+        }
 
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            color: var(--text-dark);
+            background-color: var(--light-bg);
+            line-height: 1.6;
+        }
+
+        /* --- NAVIGATION BAR --- */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(10, 25, 47, 0.95);
+            border-bottom: 2px solid var(--gold);
+            z-index: 1000;
+            padding: 10px 20px;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 55px;
+            width: auto;
+            display: block;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 20px;
+            list-style: none;
+        }
+
+        .nav-menu a {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            transition: color 0.3s ease;
+        }
+
+        .nav-menu a:hover {
+            color: var(--gold);
+        }
+
+        .btn-book {
+            background-color: var(--gold);
+            color: var(--dark-blue);
+            padding: 10px 20px;
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 4px;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+
+        .btn-book:hover {
+            background-color: var(--white);
+            transform: translateY(-2px);
+        }
+
+        /* --- HERO SECTION WITH VIDEO --- */
+        .hero {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+            overflow: hidden;
+        }
+
+        .hero-video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            transform: translate(-50%, -50%);
+            object-fit: cover;
+            z-index: 1;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(rgba(10, 25, 47, 0.7), rgba(10, 25, 47, 0.85));
+            z-index: 2;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 3;
+            max-width: 800px;
+            padding: 20px;
+        }
+
+        .hero-title {
+            font-family: 'Cinzel', serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            letter-spacing: 3px;
+            margin-bottom: 10px;
+            color: var(--white);
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            color: var(--gold);
+            margin-bottom: 15px;
+            font-weight: 400;
+            letter-spacing: 1px;
+        }
+
+        .hero-tagline {
+            font-style: italic;
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .btn-primary {
+            background-color: var(--gold);
+            color: var(--dark-blue);
+            padding: 12px 28px;
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--white);
+        }
+
+        .btn-secondary {
+            border: 2px solid var(--white);
+            color: var(--white);
+            padding: 12px 28px;
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--white);
+            color: var(--dark-blue);
+        }
+
+        /* --- SECTION STRUCTURES --- */
+        section {
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-family: 'Cinzel', serif;
+            font-size: 2.5rem;
+            color: var(--dark-blue);
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 3px;
+            background-color: var(--gold);
+            margin: 10px auto 0;
+        }
+
+        /* --- CARDS GRID (PACKAGES / TOURS) --- */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background-color: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card-img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 25px;
+        }
+
+        .card-tag {
+            color: var(--gold);
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+        }
+
+        .card-title {
+            font-size: 1.4rem;
+            color: var(--dark-blue);
+            margin-bottom: 10px;
+        }
+
+        .card-description {
+            font-size: 0.95rem;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        /* --- ABOUT & CONTACT STYLING --- */
+        .about-text {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            font-size: 1.1rem;
+            color: #444;
+        }
+
+        .contact-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            text-align: center;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background-color: var(--dark-blue);
+            color: var(--white);
+            text-align: center;
+            padding: 30px 20px;
+            border-top: 3px solid var(--gold);
+            font-size: 14px;
+        }
+
+        /* --- RESPONSIVE MOBILE FIXES --- */
+        @media (max-width: 900px) {
+            .nav-container {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+            }
+            .nav-menu {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 12px;
+            }
+            .hero-title {
+                font-size: 2.2rem;
+            }
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            .btn-primary, .btn-secondary {
+                width: 80%;
+            }
+            section {
+                padding: 60px 15px;
+            }
+        }
+    </style>
 </head>
-
 <body>
 
-<header class="navbar">
-    <div class="nav-container">
-        <!-- Logo Area -->
-        <a href="#" class="logo">
-            <img src="logo 1.png" alt="Ambaria Global Travels Logo">
-        </a>
-
-        <!-- Navigation Links -->
-        <nav class="nav-menu">
-            <a href="#home">Home</a>
-            <a href="#umrah">Umrah Packages</a>
-            <a href="#europe">Europe Tours</a>
-            <a href="#visa">Visa Services</a>
-            <a href="#flights">Flights</a>
-            <a href="#hotels">Hotels</a>
-            <a href="#about">About</a>
-            <a href="#contact">Contact</a>
-        </nav>
-
-        <!-- CTA Action Button -->
-        <div class="nav-actions">
-            <a href="#book" class="btn-book">BOOK NOW</a>
+    <!-- MAIN NAVIGATION BAR -->
+    <header class="navbar">
+        <div class="nav-container">
+            <!-- Cropped/Optimized online logo placeholder to fit beautifully -->
+            <a href="#" class="logo">
+                <img src="https://images.unsplash.com/photo-1614028674026-a65e31bfd27c?auto=format&fit=crop&w=150&q=80" alt="Ambaria Global Travels Logo">
+            </a>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#umrah">Umrah Packages</a></li>
+                <li><a href="#tours">Worldwide Tours</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <a href="#contact" class="btn-book">BOOK NOW</a>
         </div>
-    </div>
-</header>
-<!-- Hero Section with Luxury Video Background -->
-    <section id="home" class="hero">
-        
-        
-        <!-- Dark overlay to make the gold and white text pop -->
-        <div class="hero-overlay"></div>
+    </header>
 
-        <!-- Content on top of the video -->
+    <!-- HERO SECTION WITH LUXURY VIDEO BACKGROUND -->
+    <main id="home" class="hero">
+        <video class="hero-video" autoplay loop muted playsinline>
+            <!-- Premium legal stock luxury travel background loop -->
+            <source src="https://assets.mixkit.co/videos/preview/mixkit-luxury-resort-with-swimming-pool-and-palm-trees-41838-large.mp4" type="video/mp4">
+        </video>
+        <div class="hero-overlay"></div>
         <div class="hero-content">
             <h1 class="hero-title">AMBARIA GLOBAL TRAVELS</h1>
-            <h2 class="hero-subtitle">Luxury Umrah & Worldwide Travel</h2>
+            <p class="hero-subtitle">Luxury Umrah & Worldwide Travel</p>
             <p class="hero-tagline">"The Royal Standard Of Travel"</p>
             <div class="hero-buttons">
-                <a href="#services" class="btn-secondary">Explore Packages</a>
-                <a href="#contact" class="btn-primary">Book Now</a>
+                <a href="#umrah" class="btn-primary">Explore Packages</a>
+                <a href="#contact" class="btn-secondary">Get In Touch</a>
+            </div>
+        </div>
+    </main>
+
+    <!-- LUXURY UMRAH PACKAGES SECTION -->
+    <section id="umrah">
+        <h2 class="section-title">Exclusive Umrah Packages</h2>
+        <div class="grid-container">
+            <div class="card">
+                <img class="card-img" src="https://images.unsplash.com/photo-1564769625905-50e93615e769?auto=format&fit=crop&w=600&q=80" alt="Makkah Royal Package">
+                <div class="card-content">
+                    <p class="card-tag">5-Star Luxury</p>
+                    <h3 class="card-title">The Royal Makkah Package</h3>
+                    <p class="card-description">Unparalleled spiritual journeys featuring front-row access to the Haram, staying at elite clock tower properties with bespoke private guided VIP services.</p>
+                </div>
+            </div>
+            <div class="card">
+                <img class="card-img" src="https://images.unsplash.com/photo-1591604129939-f1efa4d9f7fa?auto=format&fit=crop&w=600&q=80" alt="Madinah Serenity Package">
+                <div class="card-content">
+                    <p class="card-tag">Premium Comfort</p>
+                    <h3 class="card-title">Madinah Serenity Suite</h3>
+                    <p class="card-description">Experience peace just steps away from the Prophet’s Mosque (PBUH). Fully catered luxury transport, custom group arrangements, and historical Ziyarat tours.</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- About AMBARIA Section -->
-    <section id="about" class="about-section">
-        <div class="about-container">
-            <h2 class="section-title">About AMBARIA</h2>
-            <div class="gold-divider"></div>
-            <p class="about-text">
-                Welcome to <strong>Ambaria Global Travels</strong>, where your journey begins with trust and ends with excellence. We set the royal standard of travel, delivering bespoke, premium experiences for pilgrims and global explorers alike. Whether you are embarking on a sacred Umrah journey or seeking to discover world-class international destinations, our dedicated experts handle every single detail with flawless precision.
-            </p>
-        </div>
-    </section>
-
-    <!-- Our Services Section -->
-    <section id="services" class="services-section">
-        <h2 class="section-title">Our Premium Services</h2>
-        <div class="gold-divider"></div>
-        
-        <div class="services-grid">
-            <!-- Card 1: Umrah -->
-            <div class="service-card">
-                <div class="service-icon">🕋</div>
-                <h3>Umrah Services</h3>
-                <p>Reliable, luxury, and affordable Umrah packages with complete, stress-free support throughout your holy journey.</p>
-                <a href="#contact" class="btn-card">Learn More</a>
+    <!-- WORLDWIDE TOURS SECTION -->
+    <section id="tours">
+        <h2 class="section-title">Worldwide Destinations</h2>
+        <div class="grid-container">
+            <div class="card">
+                <img class="card-img" src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=600&q=80" alt="Europe Imperial Tour">
+                <div class="card-content">
+                    <p class="card-tag">Europe</p>
+                    <h3 class="card-title">Imperial European Escapes</h3>
+                    <p class="card-description">Explore the historic architecture of London, Paris, Rome, and Amsterdam with curated private itineraries and five-star accommodations.</p>
+                </div>
             </div>
-
-            <!-- Card 2: Visa -->
-            <div class="service-card">
-                <div class="service-icon">🛂</div>
-                <h3>Visa Consultancy</h3>
-                <p>Professional visa guidance, complete documentation handling, and seamless assistance for various worldwide destinations.</p>
-                <a href="#contact" class="btn-card">Learn More</a>
-            </div>
-
-            <!-- Card 3: Flights -->
-            <div class="service-card">
-                <div class="service-icon">✈️</div>
-                <h3>Flight Bookings</h3>
-                <p>Access the best worldwide flight options, premium seating, routing, and highly competitive prices.</p>
-                <a href="#contact" class="btn-card">Learn More</a>
-            </div>
-
-            <!-- Card 4: Hotels -->
-            <div class="service-card">
-                <div class="service-icon">🏨</div>
-                <h3>Hotel Bookings</h3>
-                <p>Comfortable, premium, and hand-picked accommodations near key landmarks worldwide to suit your exact tastes.</p>
-                <a href="#contact" class="btn-card">Learn More</a>
-            </div>
-
-            <!-- Card 5: Europe Tours -->
-            <div class="service-card">
-                <div class="service-icon">🌍</div>
-                <h3>Europe Destinations</h3>
-                <p>Customized premium travel experiences, bespoke sightseeing tours, and luxury transportation across Europe.</p>
-                <a href="#contact" class="btn-card">Learn More</a>
-            </div>
-
-            <!-- Card 6: Transfers -->
-            <div class="service-card">
-                <div class="service-icon">🚗</div>
-                <h3>Airport Transfers</h3>
-                <p>Private, luxury chauffeur services waiting for your arrival to get you safely to your destination in absolute comfort.</p>
-                <a href="#contact" class="btn-card">Learn More</a>
+            <div class="card">
+                <img class="card-img" src="https://images.unsplash.com/photo-1544644181-1484b3fdfc62?auto=format&fit=crop&w=600&q=80" alt="Visa Assistance">
+                <div class="card-content">
+                    <p class="card-tag">Global Concierge</p>
+                    <h3 class="card-title">Global Visa & Flight Services</h3>
+                    <p class="card-description">Seamless first-class flight bookings, priority lounge passes, and rapid expert visa assistance processing for all major global destinations.</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- ABOUT SECTION -->
+    <section id="about" style="background-color: var(--white); border-radius: 12px; margin-bottom: 60px;">
+        <h2 class="section-title">About Ambaria Global Travels</h2>
+        <div class="about-text">
+            <p>Welcome to Ambaria Global Travels, where your journey begins with trust and ends with excellence. We set the royal standard of travel, delivering bespoke, premium experiences for pilgrims and global explorers alike. Whether you are embarking on a sacred Umrah journey or seeking to discover world-class international destinations, our dedicated experts handle every single detail with flawless precision.</p>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact">
+        <h2 class="section-title">Begin Your Royal Journey</h2>
+        <div class="contact-container">
+            <p style="font-size: 1.2rem; margin-bottom: 10px;">Ready to tailor your bespoke travel itinerary?</p>
+            <p><strong>Email:</strong> bookings@ambariaglobaltravels.com</p>
+            <p><strong>Hotline:</strong> +1 (800) 555-AMBARIA</p>
+            <br>
+            <a href="mailto:bookings@ambariaglobaltravels.com" class="btn-primary" style="display: inline-block;">Contact Our Royal Concierge</a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
     <footer>
-        <p>&copy; 2026 Ambaria Global Travels</p>
-        <p>info@ambariaglobaltravels.com</p>
+        <p>&copy; 2026 Ambaria Global Travels. All Rights Reserved. | The Royal Standard Of Travel</p>
     </footer>
 
 </body>
