@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ambaria Global Travels | The Royal Standard Of Travel</title>
     <!-- Google Fonts for Luxury Aesthetic & Calligraphy -->
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;800&family=Playfair+Display:ital,wght@1,500;1,600&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght=500;700;800&family=Playfair+Display:ital,wght=1,500;1,600&family=Poppins:wght=300;400;500;600&display=swap" rel="stylesheet">
     <!-- FontAwesome for Premium Social & WhatsApp Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
@@ -110,10 +110,9 @@
             text-align: center;
             color: var(--white);
             overflow: hidden;
-            /* Scroll bug fixed: Removed background-attachment: fixed; so picture and writing move as one */
             background: 
                 linear-gradient(135deg, rgba(10, 25, 47, 0.8) 0%, rgba(5, 12, 24, 0.85) 100%),
-                url('https://images.unsplash.com/photo-1578894381163-e72c17f2d45f?auto=format&fit=crop&w=1920&q=90');
+                url('https://images.pexels.com/photos/2901209/pexels-photo-2901209.jpeg?auto=compress&cs=tinysrgb&w=1920&q=80');
             background-size: cover;
             background-position: center;
         }
@@ -257,7 +256,7 @@
             margin-bottom: 20px;
         }
 
-        /* --- UPGRADED PREMIUM ABOUT SECTION (NO MORE WHITE BG) --- */
+        /* --- UPGRADED PREMIUM ABOUT SECTION --- */
         .about-section-premium {
             background: linear-gradient(135deg, var(--dark-blue) 0%, var(--deep-navy) 100%);
             border: 2px solid var(--gold);
@@ -364,7 +363,24 @@
             color: var(--gold);
         }
 
-        /* --- CONTACT STYLING --- */
+        /* --- REMASTERED BEAUTIFUL CONTACT SECTION --- */
+        .contact-premium-wrapper {
+            background: 
+                linear-gradient(135deg, rgba(10, 25, 47, 0.92) 0%, rgba(5, 12, 24, 0.96) 100%),
+                url('https://images.pexels.com/photos/52509/jeep-safari-desert-travel-52509.jpeg?auto=compress&cs=tinysrgb&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            border-radius: 16px;
+            border: 2px solid var(--gold);
+            padding: 60px 40px;
+            color: var(--white);
+            box-shadow: 0 10px 30px rgba(5, 12, 24, 0.4);
+        }
+
+        .contact-premium-wrapper .section-title {
+            color: var(--white);
+        }
+
         .contact-container {
             display: flex;
             flex-direction: column;
@@ -373,15 +389,52 @@
             text-align: center;
         }
 
+        .contact-text {
+            font-size: 1.25rem;
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 400;
+            max-width: 600px;
+            margin-bottom: 10px;
+        }
+
+        .contact-email-line {
+            font-size: 1.1rem;
+            letter-spacing: 0.5px;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
         .contact-info-link {
-            color: var(--dark-blue);
+            color: var(--gold);
             text-decoration: none;
             font-weight: 600;
-            transition: color 0.3s ease;
+            transition: color 0.3s ease, text-shadow 0.3s ease;
         }
 
         .contact-info-link:hover {
-            color: var(--gold);
+            color: var(--white);
+            text-shadow: 0 0 10px rgba(214, 175, 55, 0.5);
+        }
+
+        .btn-whatsapp-live {
+            background-color: #25D366;
+            color: var(--white);
+            padding: 14px 32px;
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 4px;
+            font-size: 1rem;
+            letter-spacing: 0.5px;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+            margin-top: 15px;
+        }
+
+        .btn-whatsapp-live:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.5);
         }
 
         /* --- SOCIAL MEDIA GRID --- */
@@ -528,6 +581,9 @@
             .about-section-premium {
                 padding: 40px 20px;
             }
+            .contact-premium-wrapper {
+                padding: 45px 20px;
+            }
             section {
                 padding: 60px 15px;
             }
@@ -576,7 +632,7 @@
         <h2 class="section-title">Exclusive Umrah Packages</h2>
         <div class="grid-container">
             <div class="card">
-                <img class="card-img" src="https://images.unsplash.com/photo-1564769625905-50e93615e769?auto=format&fit=crop&w=600&q=80" alt="Makkah Royal Package">
+                <img class="card-img" src="https://images.pexels.com/photos/14345821/pexels-photo-14345821.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Makkah Royal Package">
                 <div class="card-content">
                     <p class="card-tag">5-Star Luxury</p>
                     <h3 class="card-title">The Royal Makkah Package</h3>
@@ -584,7 +640,7 @@
                 </div>
             </div>
             <div class="card">
-                <img class="card-img" src="https://images.unsplash.com/photo-1591604129939-f1efa4d9f7fa?auto=format&fit=crop&w=600&q=80" alt="Madinah Serenity Package">
+                <img class="card-img" src="https://images.pexels.com/photos/14711299/pexels-photo-14711299.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Madinah Serenity Package">
                 <div class="card-content">
                     <p class="card-tag">Premium Comfort</p>
                     <h3 class="card-title">Madinah Serenity Suite</h3>
@@ -599,7 +655,8 @@
         <h2 class="section-title">Worldwide Destinations</h2>
         <div class="grid-container">
             <div class="card">
-                <img class="card-img" src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=600&q=80" alt="Europe Imperial Tour">
+                <!-- AMSTERDAM LANDMARK WITH CHOSEN PREMIUM IMAGE -->
+                <img class="card-img" src="https://images.pexels.com/photos/18023192/pexels-photo-18023192.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Amsterdam Historic Canal Estate Europe">
                 <div class="card-content">
                     <p class="card-tag">Europe</p>
                     <h3 class="card-title">Imperial European Escapes</h3>
@@ -607,7 +664,8 @@
                 </div>
             </div>
             <div class="card">
-                <img class="card-img" src="https://images.unsplash.com/photo-1544644181-1484b3fdfc62?auto=format&fit=crop&w=600&q=80" alt="Visa Assistance">
+                <!-- VISA DOCUMENTS & AIRCRAFT FLIGHT PREMIUM IMAGE -->
+                <img class="card-img" src="https://images.pexels.com/photos/5060893/pexels-photo-5060893.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Official Passport Visa Documents & Jet Flight Operations">
                 <div class="card-content">
                     <p class="card-tag">Global Concierge</p>
                     <h3 class="card-title">Global Visa & Flight Services</h3>
@@ -632,7 +690,8 @@
                     <p class="exec-name-premium">Taimoor Ahsan</p>
                     <div class="exec-meta-line">
                         <i class="fa-solid fa-envelope"></i>
-                        <a href="mailto:CEO@Ambariaglobaltravels.com" class="exec-link">CEO@Ambariaglobaltravels.com</a>
+                        <!-- CEO capitalized and rest small letters -->
+                        <a href="mailto:CEO@ambariaglobaltravels.com" class="exec-link">CEO@ambariaglobaltravels.com</a>
                     </div>
                     <div class="exec-meta-line">
                         <i class="fa-solid fa-phone"></i>
@@ -656,14 +715,15 @@
         </div>
     </section>
 
-    <!-- CONTACT SECTION -->
+    <!-- REMASTERED BEAUTIFUL CONTACT SECTION -->
     <section id="contact">
-        <h2 class="section-title">Begin Your Royal Journey</h2>
-        <div class="contact-container">
-            <p style="font-size: 1.2rem; margin-bottom: 10px;">Ready to tailor your bespoke travel itinerary?</p>
-            <p><strong>General Operations Email:</strong> <a class="contact-info-link" href="mailto:info@ambariaglobaltravels.com">info@ambariaglobaltravels.com</a></p>
-            <br>
-            <a href="https://wa.me/35699479740" target="_blank" class="btn-primary" style="background-color: #25D366; color: white; border: none;"><i class="fab fa-whatsapp"></i> Chat Live with Us</a>
+        <div class="contact-premium-wrapper">
+            <h2 class="section-title">Begin Your Royal Journey</h2>
+            <div class="contact-container">
+                <p class="contact-text">Ready to tailor your bespoke travel itinerary?</p>
+                <p class="contact-email-line"><strong>General Operations Email:</strong> <a class="contact-info-link" href="mailto:info@ambariaglobaltravels.com">info@ambariaglobaltravels.com</a></p>
+                <a href="https://wa.me/35699479740" target="_blank" class="btn-whatsapp-live"><i class="fab fa-whatsapp"></i> Chat Live with Us</a>
+            </div>
         </div>
     </section>
 
