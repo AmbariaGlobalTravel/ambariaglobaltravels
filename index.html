@@ -36,6 +36,19 @@
             color: var(--text-dark);
             background-color: var(--light-bg);
             line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* --- PREMIUM SLIDING/BUBBLING SCROLL ANIMATION CSS --- */
+        .reveal {
+            opacity: 0;
+            transform: translateY(50px) scale(0.98);
+            transition: all 0.9s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0) scale(1);
         }
 
         /* --- NAVIGATION BAR --- */
@@ -99,7 +112,7 @@
             transform: translateY(-2px);
         }
 
-        /* --- HERO SECTION WITH FIXED UNIFIED SCROLLING --- */
+        /* --- HERO SECTION --- */
         .hero {
             position: relative;
             height: 100vh;
@@ -110,7 +123,6 @@
             text-align: center;
             color: var(--white);
             overflow: hidden;
-            /* Scroll bug fixed: Removed background-attachment: fixed; so picture and writing move as one */
             background: 
                 linear-gradient(135deg, rgba(10, 25, 47, 0.8) 0%, rgba(5, 12, 24, 0.85) 100%),
                 url('https://images.unsplash.com/photo-1578894381163-e72c17f2d45f?auto=format&fit=crop&w=1920&q=90');
@@ -125,7 +137,6 @@
             padding: 20px;
         }
 
-        /* --- HIGH-END TYPOGRAPHY EMBELLISHMENTS --- */
         .hero-title {
             font-family: 'Cinzel', serif;
             font-size: 4.2rem;
@@ -184,7 +195,7 @@
 
         /* --- SECTION STRUCTURES --- */
         section {
-            padding: 80px 20px;
+            padding: 90px 20px;
             max-width: 1200px;
             margin: 0 auto;
         }
@@ -228,7 +239,7 @@
 
         .card-img {
             width: 100%;
-            height: 220px;
+            height: 240px;
             object-fit: cover;
         }
 
@@ -257,14 +268,13 @@
             margin-bottom: 20px;
         }
 
-        /* --- UPGRADED PREMIUM ABOUT SECTION (NO MORE WHITE BG) --- */
+        /* --- PREMIUM ABOUT SECTION --- */
         .about-section-premium {
             background: linear-gradient(135deg, var(--dark-blue) 0%, var(--deep-navy) 100%);
             border: 2px solid var(--gold);
             border-radius: 16px;
             padding: 60px 40px;
-            margin-top: 40px;
-            margin-bottom: 60px;
+            margin-bottom: 30px;
             box-shadow: 0 10px 30px rgba(5, 12, 24, 0.4);
         }
 
@@ -281,7 +291,7 @@
             line-height: 1.9;
         }
 
-        /* --- BEAUTIFUL LUXURY EXECUTIVE CARDS --- */
+        /* --- LUXURY EXECUTIVE CARDS --- */
         .exec-grid-premium {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -364,7 +374,24 @@
             color: var(--gold);
         }
 
-        /* --- CONTACT STYLING --- */
+        /* --- REMASTERED CALL-TO-ACTION BACKGROUND FOR CONTACT SECTION --- */
+        .contact-premium-wrapper {
+            background: 
+                linear-gradient(135deg, rgba(10, 25, 47, 0.92) 0%, rgba(5, 12, 24, 0.95) 100%),
+                url('https://images.unsplash.com/photo-1488646953014-85cb44e25828?auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            border-radius: 16px;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            padding: 60px 30px;
+            color: var(--white);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        .contact-premium-wrapper .section-title {
+            color: var(--white);
+        }
+
         .contact-container {
             display: flex;
             flex-direction: column;
@@ -373,15 +400,19 @@
             text-align: center;
         }
 
+        .contact-container p {
+            color: rgba(255, 255, 255, 0.85);
+        }
+
         .contact-info-link {
-            color: var(--dark-blue);
+            color: var(--gold);
             text-decoration: none;
             font-weight: 600;
             transition: color 0.3s ease;
         }
 
         .contact-info-link:hover {
-            color: var(--gold);
+            color: var(--white);
         }
 
         /* --- SOCIAL MEDIA GRID --- */
@@ -558,7 +589,7 @@
         </div>
     </header>
 
-    <!-- HERO SECTION WITH FIXED UNIFIED SCROLLING -->
+    <!-- HERO SECTION -->
     <main id="home" class="hero">
         <div class="hero-content">
             <h1 class="hero-title">AMBARIA GLOBAL TRAVELS</h1>
@@ -572,7 +603,7 @@
     </main>
 
     <!-- LUXURY UMRAH PACKAGES SECTION -->
-    <section id="umrah">
+    <section id="umrah" class="reveal">
         <h2 class="section-title">Exclusive Umrah Packages</h2>
         <div class="grid-container">
             <div class="card">
@@ -595,7 +626,7 @@
     </section>
 
     <!-- WORLDWIDE TOURS SECTION -->
-    <section id="tours">
+    <section id="tours" class="reveal">
         <h2 class="section-title">Worldwide Destinations</h2>
         <div class="grid-container">
             <div class="card">
@@ -617,8 +648,8 @@
         </div>
     </section>
 
-    <!-- REMASTERED PREMIUM ABOUT & EXECUTIVE BOARD DIRECTORY -->
-    <section id="about">
+    <!-- PREMIUM ABOUT & EXECUTIVE BOARD DIRECTORY -->
+    <section id="about" class="reveal">
         <div class="about-section-premium">
             <h2 class="section-title">About Ambaria Global Travels</h2>
             <div class="about-text-premium">
@@ -656,14 +687,16 @@
         </div>
     </section>
 
-    <!-- CONTACT SECTION -->
-    <section id="contact">
-        <h2 class="section-title">Begin Your Royal Journey</h2>
-        <div class="contact-container">
-            <p style="font-size: 1.2rem; margin-bottom: 10px;">Ready to tailor your bespoke travel itinerary?</p>
-            <p><strong>General Operations Email:</strong> <a class="contact-info-link" href="mailto:info@ambariaglobaltravels.com">info@ambariaglobaltravels.com</a></p>
-            <br>
-            <a href="https://wa.me/35699479740" target="_blank" class="btn-primary" style="background-color: #25D366; color: white; border: none;"><i class="fab fa-whatsapp"></i> Chat Live with Us</a>
+    <!-- CONTACT SECTION WITH LUXURY BACKGROUND WRAPPER -->
+    <section id="contact" class="reveal">
+        <div class="contact-premium-wrapper">
+            <h2 class="section-title">Begin Your Royal Journey</h2>
+            <div class="contact-container">
+                <p style="font-size: 1.2rem; margin-bottom: 10px;">Ready to tailor your bespoke travel itinerary?</p>
+                <p><strong>General Operations Email:</strong> <a class="contact-info-link" href="mailto:info@ambariaglobaltravels.com">info@ambariaglobaltravels.com</a></p>
+                <br>
+                <a href="https://wa.me/35699479740" target="_blank" class="btn-primary" style="background-color: #25D366; color: white; border: none;"><i class="fab fa-whatsapp"></i> Chat Live with Us</a>
+            </div>
         </div>
     </section>
 
@@ -681,6 +714,28 @@
             <a href="#" class="social-link-item" title="Threads Ambariatravels.official"><i class="fa-solid fa-at"></i> Threads</a>
         </div>
     </footer>
+
+    <!-- INTERSECTION OBSERVER SCRIPT FOR FLUID SCROLL BUBBLING -->
+    <script>
+        const revealSections = document.querySelectorAll('.reveal');
+        
+        const sectionObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    // Stop observing once tracked to keep performance perfect
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.12, // Section triggers exactly when 12% enters view
+            rootMargin: "0px 0px -40px 0px"
+        });
+
+        revealSections.forEach(section => {
+            sectionObserver.observe(section);
+        });
+    </script>
 
 </body>
 </html>
