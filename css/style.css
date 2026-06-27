@@ -87,7 +87,7 @@ body {
     align-items: center;
     justify-content: center;
     text-align: center;
-    background-image: url('../images/HERO-IMAGE.jpeg'); /* Links right to your image folder */
+    background-image: url('images/HERO-IMAGE.jpeg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
