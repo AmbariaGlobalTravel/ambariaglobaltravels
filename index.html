@@ -98,50 +98,24 @@
             transform: translateY(-2px);
         }
 
-        /* --- HERO SECTION WITH ELITE MULTI-LAYER COLLAGE BACKGROUND --- */
+        /* --- HERO SECTION WITH FULL-COVER PREVIEW SKYLINE --- */
         .hero {
             position: relative;
             height: 100vh;
+            width: 100%;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
             color: var(--white);
             overflow: hidden;
-            background-color: var(--dark-blue);
-        }
-
-        /* 
-           Premium Blend Architecture:
-           Combines Makkah Clock Tower, Eiffel Tower, and London Bridge into a beautiful 
-           gradient-masked panorama that scales beautifully on desktop and mobile.
-        */
-        .hero-bg-collage {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 1;
+            /* Using a premium panoramic blend that covers 100% of the screen area seamlessly */
             background: 
-                /* Layer 1: Dark luxury vignette overlay for crisp text readability */
-                linear-gradient(135deg, rgba(10, 25, 47, 0.82) 20%, rgba(5, 12, 24, 0.88) 80%),
-                /* Layer 2: Right-aligned European Architecture (Eiffel Tower & Paris Skyline) */
-                linear-gradient(to left, transparent 40%, rgba(10, 25, 47, 1) 100%),
-                url('https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=1200&q=80') right center / 50% no-repeat,
-                /* Layer 3: Left-aligned Sacred Architecture (Makkah Clock Tower Palace) */
-                linear-gradient(to right, transparent 40%, rgba(10, 25, 47, 1) 100%),
-                url('https://images.unsplash.com/photo-1604999333679-b86d54738315?auto=format&fit=crop&w=1200&q=80') left center / 50% no-repeat;
-            background-blend-mode: normal, multiply, normal, multiply, normal;
-        }
-
-        /* Background refinement specifically for mobile screens */
-        @media (max-width: 768px) {
-            .hero-bg-collage {
-                background: 
-                    linear-gradient(rgba(10, 25, 47, 0.85), rgba(5, 12, 24, 0.90)),
-                    url('https://images.unsplash.com/photo-1604999333679-b86d54738315?auto=format&fit=crop&w=800&q=80') center center / cover no-repeat;
-            }
+                linear-gradient(135deg, rgba(10, 25, 47, 0.8) 0%, rgba(5, 12, 24, 0.85) 100%),
+                url('https://images.unsplash.com/photo-1578894381163-e72c17f2d45f?auto=format&fit=crop&w=1920&q=90');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
         }
 
         .hero-content {
@@ -154,9 +128,9 @@
         /* --- HIGH-END TYPOGRAPHY EMBELLISHMENTS --- */
         .hero-title {
             font-family: 'Cinzel', serif;
-            font-size: 4rem;
+            font-size: 4.2rem;
             font-weight: 800;
-            letter-spacing: 6px;
+            letter-spacing: 7px;
             margin-bottom: 5px;
             line-height: 1.2;
             background: linear-gradient(180deg, var(--white) 20%, var(--light-gold) 100%);
@@ -517,9 +491,8 @@
         </div>
     </header>
 
-    <!-- HERO SECTION WITH PRESET CHRIS-CROSS VISUAL ECOSYSTEM -->
+    <!-- HERO SECTION WITH PRESET FULL COVER VISUAL ECOSYSTEM -->
     <main id="home" class="hero">
-        <div class="hero-bg-collage"></div>
         <div class="hero-content">
             <h1 class="hero-title">AMBARIA GLOBAL TRAVELS</h1>
             <p class="hero-subtitle">Luxury Umrah & Worldwide Travel</p>
@@ -581,10 +554,10 @@
     <section id="about" style="background-color: var(--white); border-radius: 12px; margin-bottom: 60px;">
         <h2 class="section-title">About Ambaria Global Travels</h2>
         <div class="about-text">
-            <p>Welcome to Ambaria Global Travels  where our name signifies the pinnacle of luxury travel. Bridging elite European hospitality standards with our operational roots in Pakistan, we craft unforgettable worldwide journeys, premium visa solutions, and sacred Umrah pilgrimages. Because true luxury means flawless peace of mind, our dedicated team provides 24/7 real-time assistance ensuring your travel is always seamless, stress-free, and extraordinary.</p>
+            <p>Welcome to Ambaria Global Travels where our name signifies the pinnacle of luxury travel. Bridging elite European hospitality standards with our operational roots in Pakistan, we craft unforgettable worldwide journeys, premium visa solutions, and sacred Umrah pilgrimages. Because true luxury means flawless peace of mind, our dedicated team provides 24/7 real-time assistance ensuring your travel is always seamless, stress-free, and extraordinary.</p>
         </div>
 
-        <!-- EXECUTIVE EXECUTIVE CHANNELS -->
+        <!-- EXECUTIVE MANAGEMENT CHANNELS -->
         <div class="exec-grid">
             <div class="exec-card">
                 <p class="exec-role">CEO</p>
